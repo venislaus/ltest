@@ -1,0 +1,899 @@
+/*
+Theme Name: The Wash Theme
+Theme URI: http://thewash.com
+Description: THE_WASH's custom theme.
+Version: 4.0
+Author: TheWash
+Author URI: http://www.thewash.com/
+License: Copyright 2016
+License URI: http://www.thewash.com
+Tags: bootstrap, custom, fontawesome, cycle2, bootsrtap walker class
+*/
+
+/*******************************
+
+The core of this theme is bootstrap -- http://getbootstrap.com/css/
+The icon font used for this theme is font awesome -- http://fortawesome.github.io/Font-Awesome/icons/
+The main navagation is bootstrap nav via the bootstrap walker -- https://github.com/twittem/wp-bootstrap-navwalker
+the main slider and slider shortcodes are now useing the new cycle2 js -- http://jquery.malsup.com/cycle2/
+
+
+********************************/
+
+html {
+    background: #ffffff;
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    overflow: auto;
+}
+/* this is to stop scroll bars when position absolute to the right of the main content  */
+#wrap {
+    overflow: hidden;
+    min-height: 100%;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    font-weight: inherit;
+    color: inherit;
+}
+/* remove the annoying 20px margin top from bootstrap core  */
+article h1, article h2, article h3, article h4, article h5, article h6, footer h1, footer h2, footer h3, footer h4, footer h5, footer h6, header h1, header h2, header h3, header h4, header h5, header h6 {
+    margin-top: 0
+}
+hr {
+    border: solid #ddd;
+    border-width: 1px 0 0;
+    clear: both;
+    margin: 0.75em 0 1.4em;
+    height: 0;
+}
+/* ===[ Address `outline` inconsistency between Chrome and other browsers. ]=== */
+a:focus {
+    outline: 0
+}
+/* ===[ Improve readability when focused and also mouse hovered in all browsers. ]=== */
+a:active, a:hover {
+    outline: 0
+}
+/* ===[ Core wordpress images leave as is ]=== */
+.attachment-post-thumbnail {
+    display: block;
+    margin: 0 0 2% 0;
+}
+.alignright {
+    display: block;
+    margin: 0 0 2% 0;
+}
+.alignleft, .attachment-thumbnail {
+    display: block;
+    margin: 0 0 2% 0;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 2%;
+}
+.logo {
+    margin: 0
+}
+.slideshow-main-slider .cycle-slide {
+    width: 100%
+}
+.slideshow-main-slider .cycle-slide img {
+    width: 100%;
+    height: auto;
+}
+article ul {
+    padding-left: 0
+}
+article li {
+    list-style: none
+}
+article li:before {
+    content: "\f101";
+    font-family: FontAwesome;
+    padding-right: 3px;
+}
+.woocommerce li:before {
+    content: "";
+    padding: 0;
+}
+#wrap, #header, #callout, #callout2, #callout3, #callout4, #callout5, #callout6, #callout7, #callout8, #callout9, #footer, #footer2 {clear: both; position: relative;}
+
+header .navbar {
+    position: static
+}
+.container {
+    position: relative;
+    max-height: 1000000px;  /* this css is to stop font bost in android browsers */
+}
+#callout {
+
+}
+footer .menu, footer .menu li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+footer .menu a:before {
+    content: "\f101";
+    font-family: FontAwesome;
+    padding-right: 3px;
+}
+footer .menu ul {
+    padding: 0;
+    margin: 0 0 0 5px;
+}
+.navbar-collapse {
+    min-height: none
+}
+#main-slider-prev-next {
+
+}
+#main-slider-prev-next #prev, #main-slider-prev-next #next {
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    width: 22px;
+    height: 0px;
+    padding-top: 33px;
+    display: block;
+    z-index: 101;
+    overflow: hidden;
+    cursor: pointer;
+}
+#main-slider-prev-next #next {
+    right: -30px;
+    background-image: url(images/page.png);
+    background-position: 0 0;
+}
+#main-slider-prev-next #prev {
+    left: -30px;
+    background-image: url(images/page.png);
+    background-position: -28px 0;
+}
+#main-slider-pager {
+    list-style: none;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    margin-left: -30px;
+    z-index: 101;
+}
+#main-slider-pager a {
+    display: block;
+    width: 13px;
+    height: 0;
+    padding-top: 13px;
+    background-image: url(images/pagnation.png);
+    background-position: -21px 0;
+    float: left;
+    overflow: hidden;
+    margin: 0 3px;
+}
+#main-slider-pager a.cycle-pager-active {
+    background-position: 0 0
+}
+.cycle-slide-hidden {
+    display: none
+}
+.cycle-slideshow, .cycle-carousel-wrap {
+    width: 100%
+}
+.slideshow_wraper {
+    position: relative
+}
+.cycle-pager-active {
+    color: #ccc
+}
+.prev-next #prev, .prev-next #next {
+    position: absolute;
+    top: 40%;
+    margin-top: -17px;
+    width: 22px;
+    height: 0px;
+    padding-top: 33px;
+    display: block;
+    z-index: 101;
+    overflow: hidden;
+    cursor: pointer;
+}
+.prev-next #next {
+    right: -30px;
+    background-image: url(images/page.png);
+    background-position: 0 0;
+}
+.prev-next #prev {
+    left: -30px;
+    background-image: url(images/page.png);
+    background-position: -28px 0;
+}
+.carousel-prev-next {
+
+}
+.carousel-prev-next #carouselprev, .carousel-prev-next #carouselnext {
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    width: 22px;
+    height: 0px;
+    padding-top: 33px;
+    display: block;
+    z-index: 101;
+    overflow: hidden;
+    cursor: pointer;
+}
+.carousel-prev-next #carouselnext {
+    right: -30px;
+    background-image: url(images/page.png);
+    background-position: 0 0;
+}
+.carousel-prev-next #carouselprev {
+    left: -30px;
+    background-image: url(images/page.png);
+    background-position: -28px 0;
+}
+.full_width, .one_half, .one_third, .two_third, .three_fourth, .one_fourth, .one_fifth, .two_fifth, .three_fifth, .four_fifth {
+    margin-bottom: 2%
+}
+.wp-post-image, img, .wp-caption, .size-auto, .size-full, .size-large, .size-medium, .size-thumbnail {
+    max-width: 100%;
+    height: auto;
+}
+.woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt, .woocommerce #content input.button.alt, .woocommerce-page a.button.alt, .woocommerce-page button.button.alt, .woocommerce-page input.button.alt, .woocommerce-page #respond input#submit.alt, .woocommerce-page #content input.button.alt, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #content input.button, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button, .woocommerce-page #respond input#submit, .woocommerce-page #content input.button, .btn, .btn-default, a.button, button, input[type="submit"], input[type="reset"], input[type="button"] {
+    background-image: none;
+    background-color: #ddd; /* Old browsers */
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 2px;
+    box-shadow: none;
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: bold;
+    left: auto;
+    line-height: 1.25em;
+    margin: 0;
+    overflow: visible;
+    padding: 1% 4%;
+    position: relative;
+    text-decoration: none;
+    text-shadow: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+}
+.woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce #content input.button.alt:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover, .woocommerce-page #respond input#submit.alt:hover, .woocommerce-page #content input.button.alt:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce #content input.button:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page #content input.button:hover, .btn:hover, .btn-default:hover, a.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .woocommerce a.button.alt:focus, .woocommerce button.button.alt:focus, .woocommerce input.button.alt:focus, .woocommerce #respond input#submit.alt:focus, .woocommerce #content input.button.alt:focus, .woocommerce-page a.button.alt:focus, .woocommerce-page button.button.alt:focus, .woocommerce-page input.button.alt:focus, .woocommerce-page #respond input#submit.alt:focus, .woocommerce-page #content input.button.alt:focus, .woocommerce a.button:focus, .woocommerce button.button:focus, .woocommerce input.button:focus, .woocommerce #respond input#submit:focus, .woocommerce #content input.button:focus, .woocommerce-page a.button:focus, .woocommerce-page button.button:focus, .woocommerce-page input.button:focus, .woocommerce-page #respond input#submit:focus, .woocommerce-page #content input.button:focus, .btn:focus, .btn-default:focus, a.button:focus, button:focus, input[type="submit"]:focus, input[type="reset"]:focus, input[type="button"]:focus, .woocommerce a.button.alt:active, .woocommerce button.button.alt:active, .woocommerce input.button.alt:active, .woocommerce #respond input#submit.alt:active, .woocommerce #content input.button.alt:active, .woocommerce-page a.button.alt:active, .woocommerce-page button.button.alt:active, .woocommerce-page input.button.alt:active, .woocommerce-page #respond input#submit.alt:active, .woocommerce-page #content input.button.alt:active, .woocommerce a.button:active, .woocommerce button.button:active, .woocommerce input.button:active, .woocommerce #respond input#submit:active, .woocommerce #content input.button:active, .woocommerce-page a.button:active, .woocommerce-page button.button:active, .woocommerce-page input.button:active, .woocommerce-page #respond input#submit:active, .woocommerce-page #content input.button:active, .btn:active, .btn-default:active, a.button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
+    background-image: none;
+    background-color: #fff; /* Old browsers */
+    border: 1px solid rgba(0, 0, 0, .3);
+    color: #111111;
+}
+.shop-now-btn {
+    float: right;
+    margin: 0 0 15px 15px;
+}
+/* ===[ Change padding to push the learn more CTA's down without affecting the text in the box ]=== */
+.blocks {
+    padding-bottom: 30px;
+    position: relative;
+}
+.blocks .ctaction {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+.blocks .ctaction.left {
+    left: 10px
+}
+.blocks .ctaction.center {
+    left: 50%;
+    margin-left: -50px;
+}
+/* ===[ This only take effect if the show social colors is checked inside of theme options ]=== */
+.social-color span.social-facebook {
+    color: #3C599B
+}
+.social-color span.social-twitter {
+    color: #5EAADE
+}
+.social-color span.social-google {
+    color: #DB5049
+}
+.social-color span.social-linkedin {
+    color: #0274B3
+}
+.social-color span.social-youtube {
+    color: #D02827
+}
+.social-color span.social-vimeo {
+    color: #1BB6EC
+}
+.social-color span.social-pinterest {
+    color: #CB2028
+}
+.social-color span.social-instagram {
+    color: #395886
+}
+.social-color span.social-rss {
+    color: #FF8228
+}
+/* this code alows for responsive youtube and vimeo iframes 
+16:9 is 56.25%
+4:3 is 75%
+google maps is usally (450 ÷ 500 = 0.9 = 90%)
+see http://getbootstrap.com/components/#responsive-embed
+ */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* calculated out of the aspect ratio of the video */
+    padding-top: 30px; /* 30 pixels to allow space for the chrome - specific to YouTube videos */
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* this code alows for responsive google maps  */
+.google-maps {
+    position: relative;
+    padding-bottom: 90%; /* calculated out of the aspect ratio of the google maps */
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* ************************
+ Woocommerce Override - make sure to uncheck hard crop from the settings catalog tab 
+ ***********************
+   ================================================== */
+.woocommerce .box_1 ul.products li.product a img, .woocommerce-page .box_1 ul.products li.product a img, .box_1 ul.products.list li.product img, .woocommerce .box_1 div.product div.images img, .woocommerce .box_1 #content div.product div.images img, .woocommerce-page .box_1 div.product div.images img, .woocommerce-page .box_1 #content div.product div.images img, .box_1 .woocommerce ul.products li.product a img, .box_1 .woocommerce ul.products li.product a:hover img {
+    width: auto !important;
+    margin: 0 auto !important;
+    box-shadow: none;
+    max-width: 100%;
+}
+.woocommerce .box_1 .related ul.products li.product img, .woocommerce .box_1 .related ul li.product img, .woocommerce .box_1 .upsells.products ul.products li.product img, .woocommerce .box_1 .upsells.products ul li.product img, .woocommerce-page .box_1 .related ul.products li.product img, .woocommerce-page .box_1 .related ul li.product img, .woocommerce-page .box_1 .upsells.products ul.products li.product img, .woocommerce-page .box_1 .upsells.products ul li.product img {
+    margin: 0 !important
+}
+.woocommerce .products li img {
+    border: 3px solid #000
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce #content div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce-page div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active a {
+    color: #D1AD79
+}
+.woocommerce .woocommerce-error:before, .woocommerce .woocommerce-info:before, .woocommerce .woocommerce-message:before, .woocommerce-page .woocommerce-error:before, .woocommerce-page .woocommerce-info:before, .woocommerce-page .woocommerce-message:before {
+    padding-top: 0
+}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+    margin-bottom: 1em
+}
+input, textarea, select {
+    max-width: 100%;
+    width: 100%;
+}
+input[type=checkmark], input[type=radio] {
+    width: auto
+}
+.panel {
+    background: none
+}
+.pp_content_container {
+    color: #D1AD79
+}
+/* ************************
+Shortcode styles search
+*************************
+   ================================================== */
+.ct-search {
+    padding: 10px 0 20px 0;
+    position: relative;
+    display: inline-block;
+}
+#header .ct-search {
+
+}
+.ct-search form {
+    position: relative
+}
+.ct-search input[type="text"] {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #c3c3c3;
+    color: #3c3c3c;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+    width: 210px;
+    float: left;
+    border-radius: 0px;
+    padding: 6px 30px 6px 6px;
+}
+.ct-search input[type="text"]:focus {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-color: #9BB4C3;
+}
+.ct-search input:-moz-placeholder {
+    color: rgba(155, 180, 195, 0.9)
+}
+.ct-submit-bg {
+
+}
+.ct-search input#go[type="submit"] {
+    background: #63A844;
+    border: medium none;
+    border-radius: 0;
+    box-shadow: none;
+    color: #FFF;
+    cursor: pointer;
+    font-family: FontAwesome;
+    font-weight: 400;
+    height: 30px;
+    text-shadow: none;
+    width: 30px;
+    position: absolute;
+    right: 0;
+    margin: 0;
+}
+/* ************************
+Shortcode styles gap height 
+*************************
+   ================================================== */
+.gap {
+    display: block;
+    margin: 0;
+    width: 100%;
+}
+/* ************************
+Shortcode styles jquery slideshow  
+*************************
+   ================================================== */
+.slideshow {
+
+}
+.slideshow img {
+
+}
+/* ************************
+Shortcode styles jquery toggle  
+*************************
+   ================================================== */
+.toggle_wrapper {
+    margin: 0 0 20px
+}
+.trigger {
+    border: 1px solid #E7E7E7;
+    padding: 20px 20px 15px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    background: linear-gradient(to bottom, #F9F9F9 0%, #F5F5F5 100%) repeat scroll 0 0 transparent;
+    margin: 0;
+}
+.trigger a {
+    font-size: 18px;
+    display: inline-block;
+    text-shadow: 0 1px 0 #FFFFFF;
+    color: #999999;
+    font-weight: normal;
+}
+.trigger a span {
+    display: block;
+    font-size: .8em;
+    font-style: italic;
+    color: #595959;
+}
+.trigger a:before {
+    content: "\f067";
+    font-family: FontAwesome;
+    padding-right: 8px;
+    color: #999999;
+}
+.trigger.active a:before {
+    content: "\f068"
+}
+.toggle_container {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E7E7E7;
+    border-top: none;
+    margin: 0;
+    padding: 20px;
+    position: relative;
+}
+/* ************************
+  Shortcode styles jquery accordion  
+***********************
+   ================================================== */
+.accordion_inner {
+    margin: 0 0 0.938em
+}
+.accordion_wrapper .trigger {
+    border: 1px solid #E7E7E7;
+    padding: 0.938em;
+    background: linear-gradient(to bottom, #F9F9F9 0%, #F5F5F5 100%) repeat scroll 0 0 transparent;
+    margin: 0;
+    font-size: 18px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    color: #999999;
+    font-weight: normal;
+    margin: 0 0 0.938em;
+    cursor: pointer;
+}
+.accordion_wrapper .trigger:before {
+    content: "\f067";
+    font-family: FontAwesome;
+    padding-right: 8px;
+}
+.accordion_wrapper .trigger.ui-state-active:before {
+    content: "\f068"
+}
+.accordion_wrapper .trigger a span {
+    display: block;
+    font-size: .8em;
+    font-style: italic;
+    color: #595959;
+}
+.accordion_wrapper .toggle_container {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E7E7E7;
+    border-top: none;
+    margin: 0;
+    padding: 0.938em;
+    position: relative;
+    margin: -0.938em 0 0.938em;
+}
+/* ***********************
+Shortcode for pops
+**********************
+   ================================================== */
+.modal-sm {
+    max-width: 300px
+}
+.modal-lg {
+    max-width: 900px
+}
+/* ************************
+  Shortcode styles jquery tabs  
+************************
+   ================================================== */
+ul.tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ ul.tabs li { 
+    position: relative;
+    padding: 0;
+    z-index: 100;
+    margin-bottom: -1px;
+}
+
+@media (min-width: 768px) { 
+    ul.tabs li {
+        float: left;
+    }
+}
+ul.tabs li:before {
+    content: "";
+    padding: 0;
+}
+ul.tabs a {
+    text-shadow: 0 1px 0 #FFFFFF;
+    color: #999999;
+    display: block;
+    padding: 15px 20px;
+    text-shadow: 1px 1px 0 #FFFFFF;
+    border: 1px solid #999;
+    background: linear-gradient(to bottom, #F9F9F9 0%, #F5F5F5 100%) repeat scroll 0 0 transparent;
+}
+.woocommerce-tabs ul.tabs a {
+    border: none;
+    background: none;
+}
+ul.tabs a span {
+    font-size: .8em;
+    color: #595959;
+    font-style: italic;
+    display: block;
+}
+ul.tabs li.ui-state-active {
+
+}
+ul.tabs li.ui-state-active a {
+    color: #4c4c4c;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+}
+ul.tabs a:hover {
+    color: #999
+}
+div.ui-tabs-panel {
+    clear: both;
+    margin: 3px 0 10px;
+    padding: 10px 20px;
+    border: 1px solid #999;
+    background: #fff;
+}
+div.ui-tabs-panel p {
+
+}
+div.ui-tabs-panel a {
+
+}
+/* ************************ 
+Shortcode styles testimonials  
+*************************
+   ================================================== */
+.testimonial-box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E7E7E7;
+    margin: 10px 0 45px;
+    position: relative;
+}
+.author-info {
+    border-bottom: 1px solid #E7E7E7;
+    padding: 20px 20px 15px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    background: linear-gradient(to bottom, #F9F9F9 0%, #F5F5F5 100%) repeat scroll 0 0 transparent;
+}
+.testimonial-author, .testimonial-position {
+    display: block
+}
+.testimonial-author {
+    color: #999999;
+    font-size: 18px;
+    padding: 10px 0 5px;
+}
+.testimonial-position {
+    color: #595959
+}
+.testimonial-position {
+    font-size: .8em;
+    font-style: italic;
+}
+.author-quote {
+    color: #363636;
+    padding: 43px 35px 30px 77px;
+    position: relative;
+    text-shadow: none;
+}
+.one_third .author-quote {
+    padding: 15px
+}
+.testimonial:before {
+    background: url("images/shortcodes-sprite.png") no-repeat scroll -45px -35px transparent;
+    content: "";
+    height: 19px;
+    left: 35px;
+    position: absolute;
+    top: 43px;
+    width: 25px;
+}
+.testimonial-bottom-arrow {
+    background: url("images/shortcodes-sprite.png") no-repeat scroll -97px -25px transparent;
+    bottom: -32px;
+    height: 32px;
+    position: absolute;
+    right: 40px;
+    width: 31px;
+}
+/* ************************ 
+Shortcode style for caution and warning 
+***************************
+   ================================================== */
+.caution, .warning {
+    border: 1px solid;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 3px 0 10px;
+    padding: 10px 20px;
+}
+.caution {
+    background: #fff4cc url(images/yellow.png) no-repeat 2% 50%;
+    border-color: #f8e3ac;
+    color: #e7932e;
+    padding-left: 48px;
+}
+.warning {
+    background: #fbd3b1 url(images/red.png) no-repeat 2% 50%;
+    border-color: #f5c69a;
+    color: #d82700;
+    padding-left: 48px;
+}
+.warning p, .caution p {
+    padding: 0
+}
+/* ************************
+Blog helper goes here
+*************************
+   ================================================== */
+.post {
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2em;
+}
+/* ***************************
+Comments 
+***************************
+   ================================================== */
+.comments, .commentlist, .nocomments, .related {
+    margin-bottom: 2em;
+    margin-top: 5em;
+}
+.commentlist .avatar {
+    float: right;
+    margin: 0 0 0.5em;
+    padding: 4px;
+}
+#cancel-comment-reply-link {
+    margin-left: 1em
+}
+.trackback .content, .pingback .content {
+    font-style: italic
+}
+.comentary {
+    font-size: 8pt;
+    padding: 0;
+}
+ol.commentlist {
+    font-size: 8pt;
+    list-style: none outside none;
+    margin: 10px;
+    padding: 0;
+    text-indent: 0;
+}
+ol.commentlist li.alt {
+
+}
+ol.commentlist li.bypostauthor {
+
+}
+ol.commentlist li.byuser {
+
+}
+ol.commentlist li.comment {
+
+}
+ol.commentlist li div.comment-author {
+    padding: 0 170px 0 0
+}
+ol.commentlist li div.vcard {
+    font: bold 14px/1.4 helvetica,arial,sans-serif
+}
+ol.commentlist li div.vcard cite.fn {
+    font-style: normal
+}
+ol.commentlist li div.vcard img.avatar-32 {
+
+}
+ol.commentlist li div.vcard img.photo {
+
+}
+ol.commentlist li div.vcard span.says {
+
+}
+ol.commentlist li div.commentmetadata {
+
+}
+ol.commentlist li p {
+    margin: 0 0 1em
+}
+ol.commentlist li ul {
+    font: 12px/1.4 helvetica,arial,sans-serif;
+    list-style: square outside none;
+    margin: 0 0 1em;
+    padding: 0;
+    text-indent: 0;
+}
+ol.commentlist li div.reply {
+    font: bold 9px arial,sans-serif;
+    padding: 5px 10px;
+    text-align: center;
+    width: 36px;
+}
+ol.commentlist li div.reply a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+ol.commentlist li ul.children {
+    list-style: none outside none;
+    margin: 1em 0 0;
+    text-indent: 0;
+}
+ol.commentlist li ul.children li {
+
+}
+ol.commentlist li ul.children li.alt {
+
+}
+ol.commentlist li ul.children li.bypostauthor {
+
+}
+ol.commentlist li ul.children li.byuser {
+
+}
+ol.commentlist li ul.children li.comment {
+
+}
+ol.commentlist li ul.children li.comment-author-admin {
+
+}
+ol.commentlist li ul.children li.depth-2 {
+    margin: 0 0 0.25em 1.5em
+}
+ol.commentlist li ul.children li.depth-3 {
+    margin: 0 0 0.25em 1.5em
+}
+ol.commentlist li ul.children li.depth-4 {
+    margin: 0 0 0.25em 1.5em
+}
+ol.commentlist li ul.children li.depth-5 {
+
+}
+ol.commentlist li ul.children li.odd {
+
+}
+ol.commentlist li.parent {
+
+}
+ol.commentlist li.pingback {
+
+}
+ol.commentlist li.pingback.parent {
+
+}
+ol.commentlist li.pingback div.vcard {
+    padding: 0 10px 0 0
+}
+ol.commentlist li.thread-alt {
+
+}
+ol.commentlist li.thread-even {
+
+}
+ol.commentlist li.thread-odd {
+
+}
+.comment-body .vcard img {
+    float: left;
+    margin: 0 5px;
+}
+#comment {
+    padding: 10px;
+    width: 90%;
+}
+.comment-body {
+    background: none repeat scroll 0 0 #F0F0F0;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.comment-body .vcard {
+    line-height: 1.7em
+}
+.comment-body .vcard a {
+    font-size: 14px;
+    font-weight: bold;
+}
+.comment-body .vcard img {
+    border: 1px solid #CCCCCC;
+    float: left;
+    margin-right: 5px;
+}
+.comment-body .commentmetadata {
+    font-size: 10px
+}
+.comment-body .commentmetadata a {
+    color: #888888
+}
+.comment-body p {
+    clear: both;
+    line-height: 1.5em;
+    margin-top: 20px;
+}
