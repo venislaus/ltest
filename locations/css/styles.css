@@ -1,0 +1,84 @@
+/** Admin Css **/
+.admin_style table.widefat {
+	border-collapse: collapse;
+}
+.admin_style .widefat th {
+	background: #333;
+	color: #fff;
+	font-family: lato;
+	font-size: 18px;
+	border: 1px solid #444;
+	padding: 10px;
+}
+.admin_style table input[type="checkbox"] {
+	margin: 5px 0 0;
+}
+.admin_style table th a {
+	padding: 0;
+	color: #fff;
+}
+.admin_style table.widefat td {
+	vertical-align: middle;
+}
+.admin_style table td a {
+	color: #333;
+}
+.admin_style table td a:hover {
+	color: #1114a3;
+}
+.admin_style table tbody tr:nth-child(odd) {
+	background: #F9F9F9;
+}
+.admin_style table tbody tr td.cat-name {
+	font-size: 16px;
+	font-family: roboto;
+	white-space: normal;
+	width: 60%;
+}
+
+@media (max-width:767px) {
+.admin_style table tbody tr td.cat-name {
+	width: auto;
+}
+}
+.admin_style .ds_pagination a, .admin_style .ds_pagination span {
+	padding: 9px 15px;
+	background: #f2f2f2;
+	margin: 15px 3px;
+	display: inline-block;
+	font-size: 14px;
+}
+.admin_style .ds_pagination a:hover, .admin_style .ds_pagination span.current {
+	background: #1114A3;
+	color: #fff;
+}
+.adminAddEdit input[type=text], .adminAddEdit select {
+	border: 1px solid #1114a3;
+	padding: 10px 15px;
+	width: 345px;
+	height: auto;
+}
+.adminAddEdit textarea {
+	border: 1px solid #1114a3;
+	padding: 10px 15px;
+	width: 550px;
+	height: 180px;
+}
+.adminAddEdit legend {
+	font-size: 16px;
+	font-family: Roboto;
+}
+.adminAddEdit input.button {
+	background: #1114a3;
+	color: #fff;
+	border: 0;
+	border-radius: 0;
+	padding: 8px 30px;
+	height: auto;
+	font: 16px Roboto;
+	margin: 20px 0 10px 0px;
+}
+.adminAddEdit table#image_lists th, .adminAddEdit.admin_style table.widefat td {
+	font-size: 16px;
+	font-family: Roboto;
+}
